@@ -212,7 +212,7 @@ class RoyalGameOfUr:
                 finished = True
                 print('No moves are possible with the current dice roll.')
             else:
-                moving_piece = input('Which move do you wish to make? ')
+                moving_piece = input('Which move do you wish to make? (type the number shown on the far left to choose a piece)')
                 # find which piece the player wants to move based on its symbol
                 for x in range(self.STARTING_PIECES):
                     for y in range(self.STARTING_PIECES):
