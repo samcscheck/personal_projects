@@ -140,9 +140,9 @@ class RoyalGameOfUr:
         """
             This function prompts the players for names and adds them to their respective dictionary
         """
-        self.white['player'] = input('What is your name? ')
+        self.white['player'] = input('What is player 1\'s name? ')
         print(self.white['player'], 'you will play as white.')
-        self.black['player'] = input('What is your name? ')
+        self.black['player'] = input('What is player 2\'s name? ')
         print(self.black['player'], 'you will play as black.')
 
     def create_pieces(self):
