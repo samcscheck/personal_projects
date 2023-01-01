@@ -1,9 +1,4 @@
 """
-File:    royal_game_of_ur.py
-Author:  Sophie Scheck
-Date:    11/1/2020
-Section: 42
-E-mail:  sscheck1@umbc.edu
 Description:
   This program runs an ancient two player game called
   the Royal Game of Ur
@@ -24,12 +19,9 @@ class RoyalGameOfUr:
     STARTING_PIECES = 7
 
     def __init__(self, board_file_name):
-        """
-        SHOULD HAVE MORE CODE
-        """
         self.board = None
         self.load_board(board_file_name)
-        # these are dictionaries to keep track of the individual player info
+        # keep track of the individual player info
         self.white = {'player': None, 'pieces': [], 'start piece': None, 'end piece': None}
         self.black = {'player': None, 'pieces': [], 'start piece': None, 'end piece': None}
         self.current_player = None
@@ -118,7 +110,7 @@ class RoyalGameOfUr:
         self.create_pieces()
         self.set_start_and_end()
 
-        # This loop runs while a player has not won the game
+        # runs while a player has not won the game
         end_game = False
         turns_count = 0
         self.display_board()
@@ -189,7 +181,7 @@ class RoyalGameOfUr:
         piece = None
         finished = False
         extra_turn = False
-        # this loop runs until the player has entered a valid integer which can be moved
+        # runs until the player has entered a valid integer which can be moved
         while not finished:
             # the boolean extra_turn takes care of the rosette case when the player gains a turn
             if extra_turn:
@@ -198,7 +190,7 @@ class RoyalGameOfUr:
                 print(self.current_player, 'you rolled a', str(roll))
                 self.display_pieces(roll)
             can_move_count = 0
-            # this for loop counts the number of pieces which can be potentially moved
+            # counts the number of pieces which can be potentially moved
             # with the number of moves they have rolled
             for x in range(self.STARTING_PIECES):
                 check_piece = self.current_pieces[x]
@@ -219,7 +211,7 @@ class RoyalGameOfUr:
                 print('No moves are possible with the current dice roll.')
             else:
                 moving_piece = input('Which move do you wish to make? ')
-                # these loops find which piece the player wants to move based on its symbol
+                # find which piece the player wants to move based on its symbol
                 for x in range(self.STARTING_PIECES):
                     for y in range(self.STARTING_PIECES):
                         if self.current_pieces[x].symbol[1] == str(y + 1) and str(y + 1) == moving_piece \
@@ -250,7 +242,7 @@ class RoyalGameOfUr:
         status = ''
         for x in range(self.STARTING_PIECES):
             piece = self.current_pieces[x]
-            # this sets the piece's start position
+            # sets the piece's start position
             if piece:
                 if not piece.position:
                     if self.current_player == self.white['player']:
@@ -264,7 +256,7 @@ class RoyalGameOfUr:
                 elif not piece.complete:
                     status = str(piece.position.position)
                 print(str(x + 1), piece.symbol, status)
-        # this for loop checks for pieces that have already completed the race
+        # checks for pieces that have already completed the race
         for x in range(self.STARTING_PIECES):
             piece = self.current_pieces[x]
             if piece:
@@ -290,7 +282,7 @@ class RoyalGameOfUr:
             else:
                 current_square = self.black['start piece']
             roll -= 1
-        # this for loops runs for the amount of moves a player has
+        # runs for the amount of moves a player has
         for x in range(roll):
             if self.current_player == self.white['player']:
                 # if the piece is on the last square of the board, the piece's position is changed to None
@@ -341,11 +333,11 @@ class RoyalGameOfUr:
                     return True
                 else:
                     current_square = current_square.next_black
-        # this code makes sure that the old BoardSquare does not still have the piece on it,
+        # makes sure that the old BoardSquare does not still have the piece on it,
         # because it has been changed to a new square
         if piece.position and not piece.complete:
             piece.position.piece = None
-        # this code changes the actual piece.position and current_square.piece
+        # changes the actual piece.position and current_square.piece
         # to where the piece has been moved to
         if current_square and not piece.complete:
             piece.position = current_square
@@ -357,7 +349,7 @@ class RoyalGameOfUr:
         :return: True or False if all of the player's pieces have completed the race
         """
         count = 0
-        # this code counts the number of pieces which have not completed the race
+        # counts the number of pieces which have not completed the race
         if self.current_player == self.white['player']:
             for x in range(self.STARTING_PIECES):
                 if not self.white['pieces'][x].complete:
