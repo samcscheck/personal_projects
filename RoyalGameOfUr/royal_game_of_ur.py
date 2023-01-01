@@ -14,6 +14,8 @@ BLACK = 'Black'
 OFF = 'Off'
 COMPLETE = 'Complete'
 
+BOARD_FILE_NAME = 'original_board.ur'
+
 
 class RoyalGameOfUr:
     STARTING_PIECES = 7
@@ -366,6 +368,5 @@ class RoyalGameOfUr:
 
 
 if __name__ == '__main__':
-    file_name = input('What is the file name of the board json? ') if len(argv) < 2 else argv[1]
-    rgu = RoyalGameOfUr(file_name)
+    rgu = RoyalGameOfUr(BOARD_FILE_NAME)
     rgu.play_game()
