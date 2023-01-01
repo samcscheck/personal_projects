@@ -1,9 +1,4 @@
 """
-File:    board_square.py
-Author:  Sophie Scheck
-Date:    11/6/2020
-Section: 42
-E-mail:  sscheck1@umbc.edu
 Description:
   This file contains classes UrPiece and BoardSquare, which create the players pieces
   and the squares on the board as objects with functions like can_move which returns a
