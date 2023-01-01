@@ -1,12 +1,7 @@
-/*                                     
-** Title: proj1.cpp                                                
-** Author: Sam Scheck      
-** Email: sscheck1@umbc.edu                                   
-** Date: 2/13/2021                                   
+/*                                                                     
 ** Description: This program allows the user to play hangman against the computer.
 **              This file contains the main driver as well as all of the functions
 **              required to run the program. 
-** Course/Section: CMSC 202/13                        
 */
 
 #include <iostream>
